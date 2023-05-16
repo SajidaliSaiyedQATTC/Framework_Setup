@@ -1,0 +1,237 @@
+<html>
+<head>
+<section>
+  <!--for demo wrap-->
+  <script>
+  // ".tbl-content" consumed little space for vertical scrollbar, scrollbar width depend on browser/os/platfrom. Here calculate the scollbar width .
+  $(window).on("load resize ", function() {
+    var scrollWidth = $(".tbl-content").width() - $(".tbl-content table").width();
+    $(".tbl-header").css({"padding-right":scrollWidth});
+}).resize();
+</script>
+  <style>
+
+  h1{
+    font-size: 30px;
+    color: #000B23;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 1px;
+  }
+  table{
+    width:100%;
+    table-layout: fixed;
+  }
+  .tbl-header{
+    background-color: #030246;
+   }
+  .tbl-content{
+    height:600px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background-color : #FFFFFF;
+  }
+    .tbl-contentWorkFlow{
+        height:auto;
+        overflow-x:auto;
+        margin-top: 0px;
+        overflow-x:auto;
+        border: 1px solid rgba(255,255,255,0.3);
+        background-color : #FFFFFF;
+  }
+   .tbl-tbody{
+    height:auto;
+        overflow-x:auto;
+        margin-top: 0px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background-color: #FFFFFF;
+    }
+  th{
+    padding: 10px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000B23;
+    text-transform: uppercase;
+    color : #FFFFFF;
+  }
+  td{
+    padding: 10px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 15px;
+    color: #000B23;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+    word-wrap:break-word;
+  }
+*.sl
+{
+width:30px;
+}
+*.summarySL
+{
+width:30px;
+}
+*.summaryPOD
+{
+width:200px;
+}
+*.summaryModuleName
+{
+width:300px;
+}
+*.pod
+{
+width:100px;
+}
+
+
+
+*.inputSpec,*.outputSpec
+{
+  width:30%;
+}
+*.moduleName
+{
+width:150px;
+}
+*.workFlowID
+{
+width:100px;
+}
+*.workFlowDescription
+{
+width:390px;
+}
+
+*.workflowDescriptionHeader
+{
+  width:14.28%;
+}
+*.status
+{
+width:80px;
+}
+*.remarks
+{
+}
+
+  /* demo styles */
+
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+  body{
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(to right, #FFFFFF, #FFFFFF);
+    font-family: "Garamond", sans-serif;
+  }
+  section{
+    margin: 30px;
+  }
+
+
+  /* follow me template */
+  .made-with-love {
+    margin-top: 40px;
+    padding: 10px;
+    clear: left;
+    text-align: center;
+    font-size: 10px;
+    font-family: arial;
+    color: #000B23;
+  }
+  .made-with-love i {
+    font-style: normal;
+    color: #F50057;
+    font-size: 14px;
+    position: relative;
+    top: 2px;
+  }
+  .made-with-love a {
+    color: #000B23;
+    text-decoration: none;
+  }
+  .made-with-love a:hover {
+    text-decoration: underline;
+  }
+
+
+  /* for custom scrollbar for webkit browser*/
+
+  ::-webkit-scrollbar {
+      width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+  ::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+</style>
+</section>
+</head>
+<h1 id="moduleName">typeName</h1>
+        <div class="tbl-header">
+
+     <table id="status" cellpadding="0" cellspacing="2" border="1">
+	      <thead>
+	        <tr>
+	          <th>WorkFlow ID</th>
+	          <th>WorkFlow Status</th>
+
+	          <th>POD</th>
+	          <th>Environment</th>
+	          	          <th>Executed By</th>
+	          <th>Execution Date</th>
+	          	          <th>Browser</th>
+	        </tr>
+	      </thead>
+
+	      <tbody class="tbl-tbody">
+		  	        <tr>
+		  	          <td id="testCaseID">workflowID</td>
+		  	          <td id="tcStatus">${tcStatus} </td>
+
+		  	          <td id="pod">moduleName</td>
+		  	          <td id="tcEnv">environment</td>
+		  	             <td id="tcOwner">sajidali.saiyed</td>
+		  	          <td id="tcDate">15/05/2023 16:29:43</td>
+		  	           <td id="tcBrowser">Chrome</td>
+        </tr>
+        </tbody>
+    </table>
+    </div><br>
+  <div class="tbl-contentWorkFlow">
+  <table cellpadding="0" cellspacing="0" border="2"><tr class="tbl-header">
+            <th class="workflowDescriptionHeader">WorkFlow Description:</td>
+            <td class="tbl-contentWorkFlow" id="workFlowDescription">workFlowDescription</td>
+          </tr>
+          </table>
+          </div>
+          </table><br>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="1">
+      <thead>
+        <tr>
+          <th class="sl">Sl#</th>
+	            <th class="inputSpec">Input Specification</th>
+	            <th class="outputSpec">Output Specification</th>
+	            <th class="status">Status</th>
+          <th class="remarks">Remarks</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="1"><tr bgcolor="#FFFFFF">
+<td class="sl">1</td>
+          <td class="inputSpec">ipSepc</td>
+          <td class="outputSpec"> opSpec</td>
+          <td class="status" bgcolor="#A6DDA4">Passed</td>
+          <td class="remarks">remarks</td>
+       <td class="ScreenShot"><a href="imageAssignPath">click to download screenshot</a></td> 
+        </tr>
